@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Text, FlatList, ActivityIndicator, RefreshControl } from 'react-native';
-import { TokenCard } from '@/src/components/specific/TokenCard';
-import { useTokens } from '@/src/hooks/useTokens';
-import { colors } from '@/src/theme/colors';
-import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  ActivityIndicator,
+  RefreshControl,
+} from "react-native";
+import { TokenCard } from "@/src/components/specific/TokenCard";
+import { useTokens } from "@/src/hooks/useTokens";
+import { colors } from "@/src/theme/colors";
+import { StatusBar } from "expo-status-bar";
 
 export default function DexScreen() {
-  const { tokens, loading, error, refreshing, fetchTokens, onRefresh } = useTokens();
+  const { tokens, loading, error, refreshing, fetchTokens, onRefresh } =
+    useTokens();
 
   if (loading) {
     return (
@@ -48,8 +56,8 @@ const styles = StyleSheet.create({
   },
   centered: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: colors.background.primary,
   },
   list: {
@@ -59,4 +67,4 @@ const styles = StyleSheet.create({
     color: colors.error,
     fontSize: 16,
   },
-}); 
+});

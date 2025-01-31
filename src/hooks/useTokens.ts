@@ -1,6 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
-import { TokenPair } from '@/src/types/api.types';
-import { fetchTokenPairs } from '@/src/api/services/tokenService';
+import { useState, useEffect, useCallback } from "react";
+import { TokenPair } from "@/src/types/api.types";
+import { fetchTokenPairs } from "@/src/api/services/tokenService";
 
 export const useTokens = () => {
   const [tokens, setTokens] = useState<TokenPair[]>([]);
@@ -14,7 +14,7 @@ export const useTokens = () => {
       setTokens(data);
       setError(null);
     } catch (err) {
-      setError('Failed to fetch token data');
+      setError("Failed to fetch token data");
     } finally {
       setLoading(false);
       setRefreshing(false);
@@ -31,4 +31,4 @@ export const useTokens = () => {
   }, []);
 
   return { tokens, loading, error, refreshing, fetchTokens, onRefresh };
-}; 
+};

@@ -1,7 +1,7 @@
-import React from 'react';
-import { StyleSheet, View, Text } from 'react-native';
-import { TokenPair } from '@/src/types/api.types';
-import { colors } from '@/src/theme/colors';
+import React from "react";
+import { StyleSheet, View, Text } from "react-native";
+import { TokenPair } from "@/src/types/api.types";
+import { colors } from "@/src/theme/colors";
 
 interface TokenCardProps {
   token: TokenPair;
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     padding: 16,
     marginBottom: 12,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 4,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
   },
   pairTitle: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
     color: colors.text.primary,
   },
@@ -53,4 +53,4 @@ const styles = StyleSheet.create({
     marginBottom: 4,
     color: colors.text.secondary,
   },
-}); 
+});
