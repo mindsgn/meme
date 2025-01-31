@@ -10,6 +10,8 @@ import { useLocalSearchParams } from "expo-router";
 import { colors } from "@/src/theme/colors";
 import { useWalletDetails } from "@/src/hooks/useWalletDetails";
 import { useWalletTransactions } from "@/src/hooks/useWalletTransactions";
+import { TransactionCard } from "@/src/components/specific/TransactionCard";
+import { FlatList } from "react-native";
 
 export default function WalletDetailsScreen() {
   const { address } = useLocalSearchParams();
@@ -38,9 +40,20 @@ export default function WalletDetailsScreen() {
         <Text style={styles.value}>$ {walletInfo?.balance.toFixed(4)}</Text>
       </View>
 
-      <View style={styles.card}>
-        <Text style={styles.value}>$ {walletInfo?.balance.toFixed(4)}</Text>
+
+      <View style={styles.transactionContainer}>
+        <FlatList
+          data={walletTransaction }
+          renderItem={({ item }) => (
+            <TransactionCard 
+              transaction={item} 
+              walletAddress={address as string}
+            />
+          )}
+          keyExtractor={(item) => item.hash}
+        />
       </View>
+      
     </ScrollView>
   );
 }
@@ -64,6 +77,10 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: colors.border,
+  },
+  transactionContainer:{
+    margin: 16,
+    padding: 16,
   },
   title: {
     fontSize: 24,

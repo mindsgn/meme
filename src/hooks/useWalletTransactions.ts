@@ -1,17 +1,33 @@
 import { useState, useEffect } from "react";
 import { fetchWalletTransactions } from "@/src/api/services/walletService";
 
-export interface WalletInfo {
-  balance: number;
-  tokenCount: number;
-  tokens: Array<{
-    name: string;
-    balance: string;
-  }>;
+type HexString = `0x${string}`;
+
+export interface WalletTransaction {
+  blockHash: HexString;
+  blockNumber: string;
+  confirmations: string;
+  contractAddress: string;
+  cumulativeGasUsed: string;
+  from: HexString;
+  functionName: string;
+  gas: string;
+  gasPrice: string;
+  gasUsed: string;
+  hash: HexString;
+  input: HexString;
+  isError: '0' | '1';
+  methodId: HexString;
+  nonce: string;
+  timeStamp: string;
+  to: HexString;
+  transactionIndex: string;
+  txreceipt_status: '0' | '1';
+  value: string;
 }
 
 export const useWalletTransactions = (address: string) => {
-  const [walletTransaction, setWalletTransaction] = useState<WalletInfo | null>(
+  const [walletTransaction, setWalletTransaction] = useState<WalletTransaction[] | null>(
     null,
   );
   const [loading, setLoading] = useState(true);
@@ -21,9 +37,8 @@ export const useWalletTransactions = (address: string) => {
     const getWalletTransactions = async () => {
       try {
         const data = await fetchWalletTransactions(address);
-        console.log(data);
-        // setWalletInfo(data);
-        // setError(null);
+        setWalletTransaction(data);
+        setError(null);
       } catch (err) {
         setError("Failed to fetch wallet information");
       } finally {
