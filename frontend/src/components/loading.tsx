@@ -28,7 +28,7 @@ function Loading({}: LoadingProp) {
       zIndex={100}
     >
       <Heading fontFamily={'heavy'} fontSize={40} color="white">
-        {'AMAFA.XYZ'}
+        {'MEME MONEY'}
       </Heading>
     </Box>
   );

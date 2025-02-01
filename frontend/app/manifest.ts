@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next'
  
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'AMAFA',
-    short_name: 'AMAFA',
+    name: 'MEME MONEY',
+    short_name: 'MEME MONEY',
     description: '',
     start_url: '/',
     display: 'standalone',

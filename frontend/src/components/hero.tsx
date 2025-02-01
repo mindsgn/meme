@@ -17,29 +17,30 @@ function Hero({}: HeroProp) {
       flex={1}
       position={'relative'}
     >
-      <Heading
-        marginY={2}
-        color="white"
-        fontFamily="heavy"
-        cursor={'pointer'}
-        textAlign={'center'}
-        fontSize={[20, 40, 60, 60]}
-        marginBottom={20}
-      >
-        {`Your Everything App For Tracking And Managing Your Assets`.toUpperCase()}
-      </Heading>
-
-      <Text
-        display={['none', 'none', 'none', 'none']}
-        marginY={4}
-        fontFamily="heavy"
-        cursor="pointer"
-        color="gray"
-      >
-        {
-          'Amafa is a modern, asset management software that lets you create, manage, assign and overview your assets and equipment. From small office equipment to construction cranes.'
-        }
-      </Text>
+      {
+        /* 
+          <Heading
+            marginY={2}
+            color="white"
+            fontFamily="heavy"
+            cursor={'pointer'}
+            textAlign={'center'}
+            fontSize={[20, 40, 60, 60]}
+            marginBottom={20} >
+            {`Your Everything App For Tracking And Managing Your Assets`.toUpperCase()}
+          </Heading>
+          <Text
+            display={['none', 'none', 'none', 'none']}
+            marginY={4}
+            fontFamily="heavy"
+            cursor="pointer"
+            color="gray" >
+            {
+              'MEME MONEY is a modern, asset management software that lets you create, manage, assign and overview your assets and equipment. From small office equipment to construction cranes.'
+            }
+          </Text>
+        */
+      }
       <Box
         display={'flex'}
         flexDir={['column', 'column', 'row', 'row']}

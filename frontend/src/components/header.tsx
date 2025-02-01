@@ -34,7 +34,7 @@ function Header({}: HeaderProps) {
           color="white"
           cursor={'pointer'}
         >
-          AMAFA.XYZ
+          MEME MONEY
         </Heading>
       </Box>
 

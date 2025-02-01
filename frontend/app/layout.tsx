@@ -6,8 +6,8 @@ import { keywords } from '@/constants/keywords';
 import {APIProvider} from '@vis.gl/react-google-maps';
 
 export const metadata: Metadata = {
-  title: 'AMAFA.XYZ',
-  applicationName: 'AMAFA.XYZ',
+  title: 'MEME MONEY',
+  applicationName: 'MEME MONEY',
   authors: [
     {
       name: 'sibongiseni',
@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     }
   ],
   description:
-    'Amafa is a modern, open source asset management software that lets you create, manage, assign and overview your assets and equipment. From small office equipment to construction cranes.',
+    'MEME MONEY is a modern, open source asset management software that lets you create, manage, assign and overview your assets and equipment. From small office equipment to construction cranes.',
   keywords,
   twitter: {
-    site: 'https://amafa.xyz',
-    title: 'Amafa.xyz'
+    site: 'https://meme.mindsgn.studio',
+    title: 'MEME MONEY'
   }
 };
 
